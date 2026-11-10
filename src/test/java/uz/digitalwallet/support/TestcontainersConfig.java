@@ -21,10 +21,13 @@ public class TestcontainersConfig {
         return new PostgreSQLContainer(DockerImageName.parse("postgres:18-alpine"));
     }
 
+    /**
+     * The JVM image, not apache/kafka-native: the native build crashed with a segfault on GitHub's CI runners.
+     */
     @Bean
     @ServiceConnection
     KafkaContainer kafka() {
-        return new KafkaContainer(DockerImageName.parse("apache/kafka-native:4.2.2"));
+        return new KafkaContainer(DockerImageName.parse("apache/kafka:4.2.2"));
     }
 
     @Bean
