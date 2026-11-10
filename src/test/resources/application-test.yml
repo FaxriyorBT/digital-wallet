@@ -1,0 +1,11 @@
+app:
+  security:
+    jwt:
+      secret: test-only-secret-key-that-is-long-enough-for-hs256
+  admin:
+    email: admin@wallet.local
+    password: Admin12345
+  exchange:
+    sync-enabled: false
+  outbox:
+    poll-interval: PT0.2S
